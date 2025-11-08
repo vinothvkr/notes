@@ -1,4 +1,5 @@
 using Api;
+using Core;
 using Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ builder.Services.AddAppDbContext(builder.Configuration.GetConnectionString("Defa
 builder.Services.AddIdentityServices();
 builder.Services.AddAuthenticationServices(builder.Environment, builder.Configuration);
 builder.Services.AddControllers();
+builder.Services.AddAppServices();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
